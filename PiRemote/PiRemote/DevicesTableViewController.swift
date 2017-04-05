@@ -20,7 +20,7 @@ class DevicesTableViewController: UITableViewController, UIPopoverPresentationCo
     var nonSshDevices: [RemoteDevice]!
 
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)""
+        super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
 

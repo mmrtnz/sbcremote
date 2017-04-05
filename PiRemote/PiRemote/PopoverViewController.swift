@@ -37,7 +37,15 @@ class PopoverViewController: UIViewController {
     }
 
     @IBAction func onSave(_ sender: UIBarButtonItem) {
-        NotificationCenter.default.post(name: NotificationNames.save, object: nil)
+        let textfield = self.view.subviews.filter({vw in vw is UITextField}).first as! UITextField
+
+        guard textfield.text != nil else {
+            // TODO: Show error
+            return
+        }
+
+        let userInfo = ["text": textfield.text]
+        NotificationCenter.default.post(name: NotificationNames.save, object: nil, userInfo: userInfo)
     }
 
     func _buildContentDiagram() {

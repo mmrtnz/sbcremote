@@ -79,8 +79,7 @@ class LoginViewController: UIViewController {
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        print("hi there")
-        return false
+        return identifier != SegueTypes.idToDevicesTable
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
